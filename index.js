@@ -17,7 +17,7 @@ try {
     });
     const body = data.body;
     // Use regex to match and replace
-    const commentPattern = /<!--[\s\S]*?-->[\r\n]?/g;
+    const commentPattern = /<!--[\s\S]*?-->[\r\n]*/g;
     const isMatchFound = commentPattern.test(body);
     let newBody;
     if (isMatchFound) {

@@ -1,12 +1,12 @@
 on:
     pull_request:
 jobs:
-    remove_pr_markdown_comment:
+    remove_pr_markdown_comments:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Update PR Description
+            - name: Remove PR Markdown Comments
               uses: ./
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}

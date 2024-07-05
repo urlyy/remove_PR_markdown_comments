@@ -11,21 +11,25 @@ The GitHub token to use
 ### `PR body`
 The PR body whose comments are removed
 
-## Example usage
+# Example usage
 ```yaml
 on:
     pull_request:
 jobs:
-    update-pr-description:
+    remove_pr_markdown_comments:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Update PR Description
-              uses: urlyy/remove_pr_markdown_comment@v1.0
+            - name: Remove PR Markdown Comments
+              uses: ./
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+# Notice
+As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch on
+![](assets/image.png)
 
 # A simple javascript test
 ```javascript
@@ -76,7 +80,7 @@ When the PR has an impact on performance (if you don't know whether the PR will 
 
 function removeMarkdownComments(markdownText = "") {
     // regex for comments in Markdown (<!-- comment -->）
-    const commentPattern = /<!--[\s\S]*?-->[\r\n]?/g;
+    const commentPattern = /<!--[\s\S]*?-->[\r\n]*/g;
     // use regex.replace method remove all matched comments
     const cleanedText = markdownText.replace(commentPattern, '');
     return cleanedText;
