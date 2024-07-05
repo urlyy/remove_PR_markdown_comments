@@ -2,6 +2,8 @@
 This action supports `pull_request` event, after obtaining the PR body with Markdown comments removed, 
 automatically updates the original PR body via the GitHub bot.
 
+MODIFY HERE
+
 ## Inputs
 - `token`
 The GitHub token to use
