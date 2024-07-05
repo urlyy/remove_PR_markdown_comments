@@ -1,0 +1,12 @@
+on:
+    pull_request:
+jobs:
+    remove_pr_markdown_comment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Update PR Description
+              uses: ./
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
