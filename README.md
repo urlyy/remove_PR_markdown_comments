@@ -28,7 +28,7 @@ jobs:
 ```
 
 # Notice
-As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch of your repository on
+As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch of your repository on, or we will get the following log:`Error: Resource not accessible by integration - https://docs.github.com/rest/pulls/pulls#update-a-pull-request`
 ![](assets/image.png)
 
 # A simple javascript test
