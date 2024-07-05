@@ -1,5 +1,5 @@
 # Introduction
-This action supports pull_request event, after obtaining the PR body with Markdown comments removed, 
+This action supports `pull_request` event, after obtaining the PR body with Markdown comments removed, 
 automatically updates the original PR body via the GitHub bot.
 
 ## Inputs
@@ -28,30 +28,23 @@ jobs:
 ```
 
 # Notice
-As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch on
+As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch of your repository on
 ![](assets/image.png)
 
 # A simple javascript test
 ```javascript
 const text = `<!--
-**Thanks for contributing to Fury.**
+**xxxxxxxxx.**
 
-**If this is your first time opening a PR on fury, you can refer to [CONTRIBUTING.md](https://github.com/apache/fury/blob/main/CONTRIBUTING.md).**
-
-Contribution Checklist
-
-    - The **Apache Fury (incubating)** community has restrictions on the naming of pr titles. You can also find instructions in [CONTRIBUTING.md](https://github.com/apache/fury/blob/main/CONTRIBUTING.md).
-
-    - Fury has a strong focus on performance. If the PR you submit will have an impact on performance, please benchmark it first and provide the benchmark result here.
 -->
 
 ## What does this PR do?
-1
-<!-- Describe the purpose of this PR. -->
-2
-3
+
+<!-- xxxxxxxxx -->
+
+
 ## Related issues
-1
+
 <!--
 Is there any related issue? Please attach here.
 
@@ -59,24 +52,25 @@ Is there any related issue? Please attach here.
 - #xxxx1
 - #xxxx2
 -->
-2
-3
+
+
 ## Does this PR introduce any user-facing change?
-1
+
 <!--
-If any user-facing interface changes, please [open an issue](https://github.com/apache/fury/issues/new/choose) describing the need to do so and update the document if necessary.
--->
-2
+xxxxxxxxxx
+xxxxxxxxxx
+xxxxxxxxxx-->
+
 - [ ] Does this PR introduce any public API change?
 - [ ] Does this PR introduce any binary protocol compatibility change?
-3
-4
+
+
 ## Benchmark
 
 <!--
-When the PR has an impact on performance (if you don't know whether the PR will have an impact on performance, you can submit the PR first, and if it will have impact on performance, the code reviewer will explain it), be sure to attach a benchmark data here.
+xxxxxxxxx
 -->
-1`
+`
 
 function removeMarkdownComments(markdownText = "") {
     // regex for comments in Markdown (<!-- comment -->）
