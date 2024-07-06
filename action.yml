@@ -1,4 +1,4 @@
-name: Remove markdown comments in PR body
+name: Remove markdown comments in PR
 author: urlyy
 description: remove markdown comments in GitHub PR body.
 
