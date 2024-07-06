@@ -1,6 +1,6 @@
 # Introduction
-This action supports `pull_request` event, after obtaining the PR body with Markdown comments removed, 
-automatically updates the original PR body via the GitHub bot.
+This action supports `pull_request` event, after obtaining the PR body and removing Markdown comments, 
+automatically updates the PR body via the GitHub bot.
 
 ## Inputs
 - `token`
@@ -12,6 +12,7 @@ The GitHub token to use
 The PR body whose comments are removed
 
 # Example usage
+`.github/workflows/xxx.yml`
 ```yaml
 on:
     pull_request:
@@ -22,7 +23,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Remove PR Markdown Comments
-              uses: ./
+              uses: urlyy/remove_PR_markdown_comments@v1.0
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -31,7 +32,7 @@ jobs:
 As this action uses `secrets.GITHUB_TOKEN`, we need to turn the switch of your repository on, or we will get the following log:`Error: Resource not accessible by integration - https://docs.github.com/rest/pulls/pulls#update-a-pull-request`
 ![](assets/image.png)
 
-# A simple javascript test
+# A simple javascript demo
 ```javascript
 const text = `<!--
 **xxxxxxxxx.**
